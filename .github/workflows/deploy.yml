@@ -22,6 +22,10 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v3
+      
+      - name: Check gcloud presence
+        run: |
+          gcloud help
 
       - name: Use Node.js 18
         uses: actions/setup-node@v3
